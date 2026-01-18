@@ -1,10 +1,13 @@
-# Time Series Cryptocurrency Market Analysis & Forecasting
+# 🚀 CryptoAnalyzer - Bitcoin Price Forecasting Platform
 
 A complete Python project for analyzing Bitcoin price data and forecasting future prices using Facebook's Prophet model with a Flask web application.
+
+---
 
 ## 📋 Project Overview
 
 This project implements:
+
 - **Data Loading & Preprocessing**: Clean Bitcoin OHLCV data
 - **Exploratory Data Analysis**: Visualize price trends and patterns
 - **Prophet Time Series Model**: Train and forecast cryptocurrency prices
@@ -12,29 +15,33 @@ This project implements:
 - **Flask Web Application**: Interactive dashboard for viewing forecasts
 - **Multiple Forecast Horizons**: 7, 30, 60, and 90-day predictions
 
+---
+
 ## 🗂️ Project Structure
 
 ```
 CryptoCurrency/
-├── app.py                          # Main Flask application
-├── data_loader.py                  # Data loading and preprocessing
-├── prophet_model.py                # Prophet model training and forecasting
-├── model_evaluation.py             # Model evaluation metrics
-├── eda.py                          # Exploratory data analysis
-├── requirements.txt                # Python dependencies
-├── README.md                       # This file
+├── app.py                              # Main Flask application
+├── data_loader.py                      # Data loading and preprocessing
+├── prophet_model.py                    # Prophet model training
+├── model_evaluation.py                 # Model evaluation metrics
+├── eda.py                              # Exploratory data analysis
+├── requirements.txt                    # Python dependencies
+├── README.md                           # This file
 ├── data/
-│   └── bitcoin_2010-07-17_2024-05-23.csv  # Bitcoin OHLCV data
+│   └── bitcoin_2010-07-17_2024-05-23.csv
 ├── templates/
-│   ├── index.html                  # Main dashboard
-│   └── about.html                  # About page
+│   ├── index.html                      # Main dashboard
+│   └── about.html                      # About page
 ├── static/
-│   ├── historical.png              # Historical price plot
-│   ├── forecast.png                # Forecast plot
-│   └── evaluation.png              # Model evaluation plot
+│   ├── historical.png                  # Historical price plot
+│   ├── forecast.png                    # Forecast plot
+│   └── evaluation.png                  # Model evaluation
 └── model/
-    └── prophet_model.pkl           # Saved Prophet model
+    └── prophet_model.pkl               # Saved Prophet model
 ```
+
+---
 
 ## 🚀 Quick Start
 
@@ -46,7 +53,8 @@ pip install -r requirements.txt
 
 ### 2. Prepare Data
 
-Ensure your Bitcoin CSV file is in the project directory. The file should contain columns:
+Ensure your Bitcoin CSV file is in the project directory. Required columns:
+
 - `Date` - Trading date
 - `Open` - Opening price
 - `High` - Highest price
@@ -70,9 +78,12 @@ The application will:
 ### 4. Access the Web Interface
 
 Open your browser and navigate to:
+
 ```
 http://localhost:5000
 ```
+
+---
 
 ## 📊 Features
 
@@ -102,9 +113,12 @@ http://localhost:5000
 - **MAPE**: Mean Absolute Percentage Error - Percentage-based accuracy
 - **Directional Accuracy**: Percentage of correct up/down predictions
 
+---
+
 ## 📁 File Descriptions
 
 ### `app.py`
+
 Main Flask application with routes:
 - `/` - Home page with dashboard
 - `/api/forecast` - JSON API for forecast data
@@ -112,12 +126,14 @@ Main Flask application with routes:
 - `/about` - Information about the project
 
 ### `data_loader.py`
+
 Functions for loading and preprocessing data:
 - `load_data()` - Load CSV file
 - `preprocess_data()` - Clean and format for Prophet
 - `get_train_test_split()` - Split data for evaluation
 
 ### `prophet_model.py`
+
 Prophet model training and forecasting:
 - `train_prophet_model()` - Train the model
 - `create_future_dataframe()` - Create forecast dataframe
@@ -126,16 +142,20 @@ Prophet model training and forecasting:
 - `save_model()` / `load_model()` - Model persistence
 
 ### `model_evaluation.py`
+
 Model evaluation functions:
 - `evaluate_model()` - Calculate evaluation metrics
 - `print_evaluation_metrics()` - Display metrics
 - `plot_evaluation()` - Plot actual vs predicted
 
 ### `eda.py`
+
 Exploratory data analysis:
 - `plot_historical_price()` - Historical price chart
 - `plot_price_statistics()` - Multi-panel statistics
 - `print_data_summary()` - Print summary statistics
+
+---
 
 ## 🔧 Configuration
 
@@ -151,8 +171,6 @@ model = Prophet(
 )
 ```
 
-## 📈 Model Parameters
-
 ### Train/Test Split
 - **Training data**: All historical data except last 90 days
 - **Test data**: Last 90 days of available data
@@ -163,19 +181,24 @@ model = Prophet(
 - **Weekly seasonality**: Captures patterns that repeat weekly
 - **Changepoint detection**: Identifies sudden trend shifts
 
+---
+
 ## ⚙️ Dependencies
 
-- **Flask** (2.3.3) - Web framework
-- **Pandas** (2.0.3) - Data manipulation
-- **NumPy** (1.24.3) - Numerical computing
-- **Prophet** (1.1.4) - Time series forecasting
-- **Matplotlib** (3.7.2) - Data visualization
-- **Scikit-learn** (1.3.0) - Machine learning metrics
-- **CmdStanPy** (1.1.0) - Prophet backend
+- **Flask** (2.3.3+) - Web framework
+- **Pandas** (2.0.3+) - Data manipulation
+- **NumPy** (1.24.3+) - Numerical computing
+- **Prophet** (1.1.4+) - Time series forecasting
+- **Matplotlib** (3.7.2+) - Data visualization
+- **Scikit-learn** (1.3.0+) - Machine learning metrics
+- **CmdStanPy** (1.1.0+) - Prophet backend
+
+---
 
 ## 🎯 Usage Examples
 
 ### Change Forecast Horizon
+
 Click the buttons on the dashboard to select:
 - 7 days ahead
 - 30 days ahead
@@ -183,6 +206,7 @@ Click the buttons on the dashboard to select:
 - 90 days ahead
 
 ### View Model Metrics
+
 The dashboard displays:
 - Current Bitcoin price
 - Forecasted price at selected horizon
@@ -191,9 +215,12 @@ The dashboard displays:
 - Confidence interval bounds
 
 ### Interpret Plots
+
 1. **Historical Price**: Shows all past price data
 2. **Forecast**: Shows predicted prices with uncertainty bands
 3. **Evaluation**: Compares actual vs predicted on test data
+
+---
 
 ## 📊 Example Output
 
@@ -226,6 +253,8 @@ Directional Accuracy:          65.43%
 ==================================================
 ```
 
+---
+
 ## ⚠️ Important Disclaimer
 
 **This project is for EDUCATIONAL PURPOSES ONLY.**
@@ -236,6 +265,8 @@ Directional Accuracy:          65.43%
 - Predictions can be significantly wrong
 - Always consult a qualified financial advisor before investing
 - Use at your own risk
+
+---
 
 ## 🚀 Future Enhancements
 
@@ -250,6 +281,8 @@ Directional Accuracy:          65.43%
 - [ ] Database for historical forecasts
 - [ ] Mobile app version
 
+---
+
 ## 📚 Resources
 
 - [Facebook Prophet Documentation](https://facebook.github.io/prophet/)
@@ -257,9 +290,13 @@ Directional Accuracy:          65.43%
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Pandas Documentation](https://pandas.pydata.org/)
 
+---
+
 ## 📝 License
 
 This project is open source and available for educational use.
+
+---
 
 ## 👨‍💻 Author
 
@@ -270,10 +307,3 @@ Created as a comprehensive learning project for time series analysis and forecas
 **Last Updated**: January 2026
 
 For questions or improvements, feel free to enhance and customize this project!
-#   C r y p t o _ A n a l y z e r 
- 
- #   C r y p t o A n a l y z e r 
- 
- #   C r y p t o A n a l y z e r 
- 
- 
